@@ -8,10 +8,15 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.51.0",
     "playwright": "^1.51.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
-  }
+  },
+  "keywords": []
 }

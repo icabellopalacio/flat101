@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "lib": ["es2017"],
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": "src"
+    }
+}
