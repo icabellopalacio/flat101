@@ -1,9 +1,9 @@
 module.exports = {
     default: {
-      require: ["./step-def/*.ts"],
+      require: ["./src/tests/step-def/*.ts"],
       requireModule: ["ts-node/register"],
       format: ["progress"],
-      paths: ["./features/*.feature"],
+      paths: ["./src/tests/features/*.feature"],
       timeout: 60000,
     },
   };
