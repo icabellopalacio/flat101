@@ -32,6 +32,7 @@ export class ProductListPage {
    * Selects the first product in the list.
    */
   async selectFirstProduct() {
+    this.page.waitForSelector(this.PRODUCT_LIST_ID);
     await this.productList.first().click(); 
   }
 }
