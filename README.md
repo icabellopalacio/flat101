@@ -1,6 +1,6 @@
 # 📌 Proyecto de Prueba Técnica para Flat101
 
-## 📖 Descripción
+## 📖 Descripción   
 
 Este repositorio contiene un conjunto de pruebas automatizadas para la prueba técnica de Flat101, utilizando herramientas modernas de testing y CI/CD.
 
@@ -28,20 +28,13 @@ flat101/
 ```
 
 
-##📋 Instalación y Configuración
+## 📋 Instalación y Configuración
 
-##1️⃣ Clonar el Repositorio
-bash
-Copiar
-Editar
+## 1️⃣ Clonar el Repositorio
 git clone https://github.com/icabellopalacio/flat101.git
 cd flat101
 
-
-##2️⃣ Instalar Dependencias
-bash
-Copiar
-Editar
+## 2️⃣ Instalar Dependencias
 npm install
 npm install playwright                             # Instalar Playwright y sus dependencias
 npx playwright install                             # Instalar los navegadores necesarios
@@ -49,29 +42,21 @@ npx playwright install-deps
 npm install --save-dev @cucumber/cucumber          # Instalar Cucumber si no está globalmente disponible
 npm install -g artillery                           # Instalar Artillery
 
-##3️⃣ Ejecutar las Pruebas End-to-End
-bash
-Copiar
-Editar
+## 3️⃣ Ejecutar las Pruebas End-to-End
 npx cucumber-js ./src/tests/features/**/*.feature --format json:./report/generate_cucumber.js
 
-##4️⃣ Ejecutar las Pruebas de Carga
-bash
-Copiar
-Editar
+## 4️⃣ Ejecutar las Pruebas de Carga
 artillery run ./src/tests/stress-test.yml --output reports/artillery/report.json
 
-##🏗 Pipeline en Bitbucket
+## 🏗 Pipeline en Bitbucket
 Este proyecto utiliza Bitbucket Pipelines para ejecutar las pruebas de manera automática en cada cambio.
 
-##🛠 Configuración en bitbucket-pipelines.yml
+## 🛠 Configuración en bitbucket-pipelines.yml
 Configura tu pipeline para ejecutar las pruebas de manera automática en cada commit o push al repositorio.
 
-##📝 Escenarios de Prueba (Ejemplo en Gherkin)
+## 📝 Escenarios de Prueba (Ejemplo en Gherkin)
 Feature: Proceso de Compra en DemoBlaze
 gherkin
-Copiar
-Editar
 Scenario: Usuario completa una compra exitosa
   Given el usuario navega a la página principal
   When el usuario agrega un producto al carrito
