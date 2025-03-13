@@ -2,7 +2,7 @@
 
 📖 Descripción
 
-Este repositorio contiene un conjunto de pruebas automatizadas para la aplicación web DemoBlaze. Las pruebas están escritas en Cucumber con TypeScript y utilizan Playwright para pruebas end-to-end. Además, se incluye una prueba de carga con Artillery.
+Este repositorio contiene un conjunto de pruebas automatizadas que aparecen en la prueba tácnica de Flat101
 
 🚀 Tecnologías Utilizadas
 
@@ -20,11 +20,10 @@ Node.js 18+.
 flat101/
 │── src/tests/
 │   ├── features/        # Archivos .feature con los escenarios en Gherkin
-│   ├── step-definitions/ # Implementación de los pasos en TypeScript
-│   ├── pages/           # Page Objects para Playwright
+│   ├── step-def/        # Implementación de los pasos en TypeScript
+│   ├── pages/           # Page Objects para Playwright usando el patrón Page Object Model 
 │   ├── hooks.ts         # Hooks para Before y After
-│── artillery/
-│   ├── stress-test.yml  # Configuración de Artillery para pruebas de carga
+│── stress-test.yml     # Configuración de Artillery para pruebas de carga
 │── bitbucket-pipelines.yml  # Definición del pipeline CI/CD
 │── package.json        # Dependencias del proyecto
 │── README.md           # Documentación del proyecto
@@ -35,6 +34,7 @@ git clone https://github.com/icabellopalacio/flat101.git
 cd flat101
 2️⃣ Instalar dependencias
 npm install 
+
 3️⃣ Ejecutar las pruebas end-to-end
 npx cucumber-js
 4️⃣ Ejecutar las pruebas de carga

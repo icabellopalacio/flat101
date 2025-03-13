@@ -1,0 +1,46 @@
+image: node:20
+
+pipelines:
+  default:
+    - step:
+        name: Clone Repository with Tests
+        script:
+          - git clone https://github.com/icabellopalacio/flat101 # Clonar el repositorio de tests
+          - cd flat101                          # Entrar en el directorio del repositorio
+          - npm ci                              # Instalar dependencias de npm del repositorio
+        artifacts:
+          - flat101/**  # Guarda la carpeta clonada para los siguientes pasos
+    - step:
+        name: Run Cucumber Tests
+        caches:
+          - node
+        script:
+          - cd flat101                          # Entrar en el directorio del repositorio
+          - npm install playwright                             # Instalar Playwright y sus dependencias
+          - npx playwright install                             # Instalar los navegadores necesarios
+          - npx playwright install-deps  
+          - npm install --save-dev @cucumber/cucumber # Instalar Cucumber si no está globalmente disponible
+          - npx cucumber-js ./src/tests/features/**/*.feature --format json:./report/generate_cucumber.js                         # Ejecutar los tests de Cucumber
+          
+    - step:
+        name: Run Artillery Load Test
+        script:
+          - cd flat101                          # Entrar en el directorio del repositorio
+          - npm install -g artillery            # Instalar Artillery globalmente
+          - mkdir -p reports/artillery          # Crear la carpeta para los resultados si no existe
+          - artillery run ./src/tests/stress-test.yml --output reports/artillery/report.json  # Ejecutar el test de carga y generar reporte en JSON
+    - step:
+        name: Publish Cucumber Results
+        script:
+          - cd flat101                          # Entrar en el directorio del repositorio
+          - echo "Test de Playwrite."
+          - ls -R ./reports/          # Verificar los archivos generados
+        artifacts:
+          - ./reports/**              # Asegura que los resultados estén disponibles para descarga
+
+    - step:
+        name: Publish Artillery Results
+        script:
+          - cd flat101                          # Entrar en el directorio del repositorio
+          - echo "Test de Artillery."
+          - ls -R ./reports/artillery/           # Verificar los archivos generados
