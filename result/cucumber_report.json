@@ -1,0 +1,105 @@
+[
+  {
+    "description": "    As Usuario de Demoblaz\n    I wan to comprar un producto \n    So voy a seleccionar el producto, \n    añadirlo al carrito y \n    rellenar los datos de compra",
+    "elements": [
+      {
+        "description": "",
+        "id": "comprar-en-demoblaz;comprar-un-producto-en-demoblaz",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Comprar un producto en Demoblaz",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 151406270
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "Estoy en la página de listado de productos",
+            "match": {
+              "location": "src/tests/step-def/buyInDemoblazTest.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 809285502
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "Voy al detalle de un producto",
+            "match": {
+              "location": "src/tests/step-def/buyInDemoblazTest.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1148799640
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "Añado el producto al carrito, abro el carrito y el panel de datos de pedido",
+            "match": {
+              "location": "src/tests/step-def/buyInDemoblazTest.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2002172236
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Relleno los datos de compra en la página del carrito \"Juan\", \"España\", \"BIlbao\", \"1234 5678 9012 3456\", \"12\", \"2023\"",
+            "match": {
+              "location": "src/tests/step-def/buyInDemoblazTest.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 932646873
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "La compra se realiza con éxito",
+            "match": {
+              "location": "src/tests/step-def/buyInDemoblazTest.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 857799630
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 33049080
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "comprar-en-demoblaz",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Comprar en Demoblaz",
+    "tags": [],
+    "uri": "src/tests/features/buyInDemoblazTest.feature"
+  }
+]
