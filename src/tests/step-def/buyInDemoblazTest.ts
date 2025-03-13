@@ -13,7 +13,7 @@ let cartPage: CartPage;
 
 Given('Estoy en la página de listado de productos', async () => {
     productListPage = new ProductListPage(page); 
-    await page.goto(mainPage);
+    await page.goto(mainPage, { waitUntil: 'domcontentloaded' });
 });
 
 When('Voy al detalle de un producto', async () => {
