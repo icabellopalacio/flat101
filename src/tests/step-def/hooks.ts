@@ -12,7 +12,7 @@ Before(async () => {
   });
   
   After(async () => {
-    if (browser){
+    if (browser.isConnected()){
       console.log("🛑 Cerrando navegador después del test...");
       await browser.close();
     }
