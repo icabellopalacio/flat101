@@ -12,8 +12,10 @@ Before(async () => {
   });
   
   After(async () => {
-    console.log("🛑 Cerrando navegador después del test...");
-    await browser.close();
+    if (browser){
+      console.log("🛑 Cerrando navegador después del test...");
+      await browser.close();
+    }
   });
   
   export { page };
