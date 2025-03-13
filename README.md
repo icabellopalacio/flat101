@@ -34,11 +34,17 @@ git clone https://github.com/icabellopalacio/flat101.git
 cd flat101
 2️⃣ Instalar dependencias
 npm install 
-
+npm install playwright                             # Instalar Playwright y sus dependencias
+npx playwright install                             # Instalar los navegadores necesarios
+npx playwright install-deps  
+npm install --save-dev @cucumber/cucumber # Instalar Cucumber si no está globalmente disponible
+npm install -g artillery  
+   
 3️⃣ Ejecutar las pruebas end-to-end
-npx cucumber-js
+npx cucumber-js ./src/tests/features/**/*.feature --format json:./report/generate_cucumber.js
+
 4️⃣ Ejecutar las pruebas de carga
-npx artillery run artillery/stress-test.yml
+artillery run ./src/tests/stress-test.yml --output reports/artillery/report.json
 🏗 Pipeline en Bitbucket
 
 Este proyecto utiliza Bitbucket Pipelines para ejecutar pruebas de manera automática.
@@ -54,12 +60,5 @@ Feature: Proceso de Compra en DemoBlaze
     And el usuario procede al checkout
     And completa el formulario de pago
     Then la compra se confirma con un mensaje de éxito
-     Solución de Problemas
-
-Error Cannot find module 'cucumber' → Ejecutar npm install nuevamente.
-
-Pruebas fallan por timeout → Asegurar waitForSelector en los selectores importantes.
-
-No se encuentran los reportes en el pipeline → Verificar que los artifacts estén configurados.
-
+ 
 

@@ -27,20 +27,18 @@ pipelines:
         script:
           - cd flat101                          # Entrar en el directorio del repositorio
           - npm install -g artillery            # Instalar Artillery globalmente
-          - mkdir -p reports/artillery          # Crear la carpeta para los resultados si no existe
-          - artillery run ./src/tests/stress-test.yml --output reports/artillery/report.json  # Ejecutar el test de carga y generar reporte en JSON
+          - mkdir -p report/artillery          # Crear la carpeta para los resultados si no existe
+          - artillery run ./src/tests/stress-test.yml --output report/artillery/report.json  # Ejecutar el test de carga y generar reporte en JSON
     - step:
         name: Publish Cucumber Results
         script:
           - cd flat101                          # Entrar en el directorio del repositorio
           - echo "Test de Playwrite."
           - ls -R ./reports/          # Verificar los archivos generados
-        artifacts:
-          - ./reports/**              # Asegura que los resultados estén disponibles para descarga
 
     - step:
         name: Publish Artillery Results
         script:
           - cd flat101                          # Entrar en el directorio del repositorio
           - echo "Test de Artillery."
-          - ls -R ./reports/artillery/           # Verificar los archivos generados
+          - ls -R ./report/artillery/           # Verificar los archivos generados
