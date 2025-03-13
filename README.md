@@ -25,6 +25,7 @@ flat101/
 │── bitbucket-pipelines.yml    # Definición del pipeline CI/CD
 │── package.json               # Dependencias del proyecto
 │── README.md                  # Documentación del proyecto
+```
 
 ##📋 Instalación y Configuración
 
