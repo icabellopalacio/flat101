@@ -25,9 +25,10 @@ flat101/
 │── bitbucket-pipelines.yml    # Definición del pipeline CI/CD
 │── package.json               # Dependencias del proyecto
 │── README.md                  # Documentación del proyecto
-### 📋 Instalación y Configuración
 
-### 1️⃣ Clonar el Repositorio
+##📋 Instalación y Configuración
+
+##1️⃣ Clonar el Repositorio
 bash
 Copiar
 Editar
@@ -35,7 +36,7 @@ git clone https://github.com/icabellopalacio/flat101.git
 cd flat101
 
 
-### 2️⃣ Instalar Dependencias
+##2️⃣ Instalar Dependencias
 bash
 Copiar
 Editar
@@ -46,25 +47,25 @@ npx playwright install-deps
 npm install --save-dev @cucumber/cucumber          # Instalar Cucumber si no está globalmente disponible
 npm install -g artillery                           # Instalar Artillery
 
-### 3️⃣ Ejecutar las Pruebas End-to-End
+##3️⃣ Ejecutar las Pruebas End-to-End
 bash
 Copiar
 Editar
 npx cucumber-js ./src/tests/features/**/*.feature --format json:./report/generate_cucumber.js
 
-### 4️⃣ Ejecutar las Pruebas de Carga
+##4️⃣ Ejecutar las Pruebas de Carga
 bash
 Copiar
 Editar
 artillery run ./src/tests/stress-test.yml --output reports/artillery/report.json
 
-### 🏗 Pipeline en Bitbucket
+##🏗 Pipeline en Bitbucket
 Este proyecto utiliza Bitbucket Pipelines para ejecutar las pruebas de manera automática en cada cambio.
 
-### 🛠 Configuración en bitbucket-pipelines.yml
+##🛠 Configuración en bitbucket-pipelines.yml
 Configura tu pipeline para ejecutar las pruebas de manera automática en cada commit o push al repositorio.
 
-### 📝 Escenarios de Prueba (Ejemplo en Gherkin)
+##📝 Escenarios de Prueba (Ejemplo en Gherkin)
 Feature: Proceso de Compra en DemoBlaze
 gherkin
 Copiar
@@ -75,18 +76,6 @@ Scenario: Usuario completa una compra exitosa
   And el usuario procede al checkout
   And completa el formulario de pago
   Then la compra se confirma con un mensaje de éxito
-¡Contribuye al proyecto, mejora las pruebas o simplemente revisa los resultados de las pruebas en los reportes generados! 🎉
-
-markdown
-Copiar
-Editar
-
-### Resumen de los cambios:
-1. **Títulos con Markdown**: Los títulos están estructurados usando `##` y `###` para mejor jerarquía.
-2. **Lista numerada y con viñetas**: Se ha utilizado una lista numerada para la instalación y configuración.
-3. **Formateo de código y comandos**: Todos los comandos se mantienen en bloques de código (`bash` y `plaintext`) para mayor claridad.
-
-Todo el archivo está ahora completamente formateado con Markdown, incluyendo títulos y subtítulos de cada sección. ¿Te gustaría ajustar algo más en el formato?
 
 
 
