@@ -6,7 +6,7 @@ let page: Page;
 
 Before(async () => {
     console.log("🔄 Iniciando navegador antes del test...");
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch();
     const context = await browser.newContext();
     page = await context.newPage();
   });
